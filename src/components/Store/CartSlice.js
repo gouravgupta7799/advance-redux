@@ -21,13 +21,13 @@ const CartSlice = createSlice({
           id: newItem.id,
           price: newItem.price,
           quantity: 1,
-          totalPrice: newItem.price,
-          name: newItem.title,
+          total: newItem.price,
+          title: newItem.title,
         })
       }
       else {
         ExistingCartItem.quantity++;
-        ExistingCartItem.totalPrice = ExistingCartItem.totalPrice + newItem.price
+        ExistingCartItem.total = ExistingCartItem.total + newItem.price
       }
     },
 
@@ -42,7 +42,7 @@ const CartSlice = createSlice({
       }
       else {
         ExistingCartItem.quantity--
-        ExistingCartItem.totalPrice = ExistingCartItem.totalPrice - ExistingCartItem.price
+        ExistingCartItem.total = ExistingCartItem.total - ExistingCartItem.price
       }
 
     },
